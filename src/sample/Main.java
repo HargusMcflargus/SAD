@@ -35,35 +35,9 @@ public class Main extends Application {
 
         primaryStage.setResizable(false);
 
-        dbInitilize();
-
-
         primaryStage.show();
     }
 
-    public int dbInitilize(){
-        try {
-            String url="jdbc:ucanaccess://src/db.accdb;";
-            connection = DriverManager.getConnection(url);
-            ResultSet resultSet = executeStatement("SELECT * FROM Users;");
-            while(resultSet.next()){
-                System.out.println(resultSet.getString("username"));
-            }
-            return 0;
-        }catch (Exception e){
-            System.out.println(e);
-            return -1;
-        }
-    }
-
-    public ResultSet executeStatement(String sqlstatement) throws SQLException {
-        try(Statement statement = connection.createStatement()) {
-            return statement.executeQuery(sqlstatement);
-        }catch (Exception e){
-            System.out.println(e);
-            return null;
-        }
-    }
 
     public static void main(String[] args) {
         launch(args);

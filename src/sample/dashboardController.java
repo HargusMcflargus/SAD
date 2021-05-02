@@ -34,7 +34,6 @@ public class dashboardController {
 
     public void dashBoardHoverIn(){
         dashboardButton.setButtonType(JFXButton.ButtonType.RAISED);
-        dashboardButton.getBackground().;
         dashboardButton.setRipplerFill(Paint.valueOf("#1b62cd"));
     }
     public void dashBoardHoverOut(){

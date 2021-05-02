@@ -1,7 +1,5 @@
 package sample;
 
-import com.jfoenix.controls.JFXButton;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,14 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.sql.*;
 
 public class loginFormController {
     @FXML
@@ -31,28 +26,6 @@ public class loginFormController {
     @FXML ImageView usernameLogo;
     @FXML ImageView passwordLogo;
 
-    protected Connection connection;
-
-    public int dbInitilize() {
-        try {
-            String url = "jdbc:ucanaccess://src/db.accdb;";
-            connection = DriverManager.getConnection(url);
-            return 0;
-        } catch (Exception e) {
-            System.out.println(e);
-            return -1;
-        }
-    }
-
-    public ResultSet executeStatement(String sqlstatement) throws SQLException {
-        try (Statement statement = connection.createStatement()) {
-            return statement.executeQuery(sqlstatement);
-        } catch (Exception e) {
-            System.out.println(e);
-            return null;
-        }
-    }
-
     public void logIn(String tempUsername) throws IOException {
         user.getScene().getWindow().hide();
 
@@ -63,7 +36,7 @@ public class loginFormController {
         Scene newScene = new Scene(root);
         actualStage.setScene(newScene);
         actualStage.setOnShowing(windowEvent -> {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Welcome " + user.getText() + "!");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Welcome " + tempUsername + "!");
             alert.showAndWait();
         });
         actualStage.setTitle("Caloocan City North Budget Tracker");
@@ -76,14 +49,11 @@ public class loginFormController {
         password.setText("");
     }
 
-    public void verify() throws SQLException, IOException {
-        dbInitilize();
-        ResultSet resultSet = executeStatement("SELECT * FROM USERS;");
-        while (resultSet.next()) {
-            if (resultSet.getString("username").equals(user.getText()) && resultSet.getString("password").equals(password.getText())) {
-                logIn(user.getText());
-                return;
-            }
+    public void verify() throws Exception {
+        DatabaseManager databaseManager = new DatabaseManager();
+        if (databaseManager.verifyUser(user.getText(), password.getText())){
+            logIn(user.getText());
+            return;
         }
         Alert alert = new Alert(Alert.AlertType.ERROR, "User and password not found");
         alert.showAndWait();
