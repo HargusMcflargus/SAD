@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="759.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.dashboardController">
+   <children>
+      <AnchorPane prefHeight="457.0" prefWidth="180.0" style="-fx-background-color: #183A6D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="dashboardButton" buttonType="RAISED" layoutX="-7.0" layoutY="108.0" onMouseClicked="#switchToDashBoard" onMouseEntered="#dashBoardHoverIn" onMouseExited="#dashBoardHoverOut" prefHeight="45.0" prefWidth="180.0" style="-fx-label-padding: 5;" text="Dashboard" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="108.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <ripplerFill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.12024854123592377" green="0.3195175528526306" blue="0.6184210777282715" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.2577319587628866">
+                           <color>
+                              <Color red="0.1040448322892189" green="0.3834795355796814" blue="0.8026315569877625" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.6786744085002172">
+                           <color>
+                              <Color red="0.28240740299224854" green="0.5694444179534912" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill></JFXButton>
+            <JFXButton fx:id="historyButton" layoutX="-3.0" layoutY="146.0" onMouseEntered="#historyHoverIn" onMouseExited="#historyHoverOut" prefHeight="45.0" prefWidth="180.0" text="History" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="153.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <ripplerFill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.12024854123592377" green="0.3195175528526306" blue="0.6184210777282715" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.2577319587628866">
+                           <color>
+                              <Color red="0.10588235408067703" green="0.3843137323856354" blue="0.8039215803146362" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.6786744085002172">
+                           <color>
+                              <Color red="0.28240740299224854" green="0.5694444179534912" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+           </JFXButton>
+            <JFXButton fx:id="dataEntry" layoutX="-4.0" layoutY="182.0" onMouseEntered="#dataEntryHoverIn" onMouseExited="#dataEntryHoverOut" prefHeight="45.0" prefWidth="180.0" text="Admin Controls" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="198.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <ripplerFill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.12024854123592377" green="0.3195175528526306" blue="0.6184210777282715" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.2577319587628866">
+                           <color>
+                              <Color red="0.1040448322892189" green="0.3834795355796814" blue="0.8026315569877625" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.6786744085002172">
+                           <color>
+                              <Color red="0.28240740299224854" green="0.5694444179534912" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="181.0" prefHeight="45.0" prefWidth="578.0" style="-fx-background-color: #0D3569;" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-family: &quot;Helvetica&quot;;" text="Dashboard" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="180.0" layoutY="45.0" prefHeight="412.0" prefWidth="579.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+         <children>
+            <Text layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-weight: bold; font-: &quot;Helvetica&quot;;" text="Current Projects" />
+            <ScrollPane layoutX="30.0" layoutY="230.0" prefHeight="157.0" prefWidth="522.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="230.0">
+              <content>
+                <AnchorPane minHeight="-Infinity" prefHeight="336.0">
+                     <children>
+                        <Accordion layoutX="14.0" layoutY="63.0" prefHeight="336.0" prefWidth="506.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <panes>
+                            <TitledPane animated="false" text="untitled 1">
+                              <content>
+                                <AnchorPane />
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Text layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-weight: bold; font-: &quot;Helvetica&quot;;" text="Overall Expenses" AnchorPane.bottomAnchor="362.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="367.67333984375" AnchorPane.topAnchor="14.0" />
+            <BarChart layoutX="14.0" layoutY="46.0" prefHeight="157.0" prefWidth="345.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="46.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <ChoiceBox layoutX="226.0" layoutY="18.0" prefHeight="28.0" prefWidth="120.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

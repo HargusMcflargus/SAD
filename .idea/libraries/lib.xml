@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/commons-lang3-3.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/hsqldb-2.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/jackcess-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/ucanaccess-5.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/jfoenix-9.0.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-8.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-commons-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-controls-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-fontawesome-4.7.0-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-icons525-4.2.0-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-materialdesignfont-2.0.26-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-materialicons-2.2.0-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-materialstackicons-2.1-5-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-octicons-4.3.0-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-weathericons-2.0.10-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/jfoenix-8.0.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-commons-11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-fontawesome-4.7.0-11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-icons525-3.0.0-11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-materialicons-2.2.0-11.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-8.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-8.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
