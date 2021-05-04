@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane layoutX="180.0" layoutY="45.0" prefWidth="679.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="312.0" prefWidth="578.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.dashBoardPaneContoller">
     <children>
         <Text layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-weight: bold; font-: &quot;Helvetica&quot;;" text="Current Projects" />
-        <ScrollPane layoutX="30.0" layoutY="230.0" prefHeight="157.0" prefWidth="522.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="230.0">
+        <ScrollPane layoutX="30.0" layoutY="230.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="157.0" prefWidth="522.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="230.0">
             <content>
                 <AnchorPane minHeight="-Infinity" prefHeight="336.0">
                     <children>
-                        <Accordion layoutX="14.0" layoutY="63.0" prefHeight="336.0" prefWidth="506.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <panes>
-                                <TitledPane animated="false" text="untitled 1">
-                                    <content>
-                                        <AnchorPane />
-                                    </content>
-                                </TitledPane>
-                            </panes>
-                        </Accordion>
+                        <Accordion fx:id="currentProjectList" layoutX="14.0" layoutY="63.0" prefHeight="336.0" prefWidth="506.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </children>
                 </AnchorPane>
             </content>
@@ -34,6 +27,33 @@
                 <NumberAxis side="LEFT" />
             </yAxis>
         </BarChart>
-        <ChoiceBox layoutX="226.0" layoutY="18.0" prefHeight="28.0" prefWidth="120.0" />
+        <ChoiceBox fx:id="yearList" layoutX="226.0" layoutY="18.0" prefHeight="28.0" prefWidth="120.0" />
+      <VBox layoutX="472.0" layoutY="25.0" prefHeight="157.0" prefWidth="180.0" AnchorPane.bottomAnchor="230.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yearly Budget" wrappingWidth="181.12109375">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="budgetField" text="0">
+               <VBox.margin>
+                  <Insets left="5.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yearly Expences?" wrappingWidth="181.12109375">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="expensesFIeld" text="0">
+               <VBox.margin>
+                  <Insets left="5.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
     </children>
 </AnchorPane>

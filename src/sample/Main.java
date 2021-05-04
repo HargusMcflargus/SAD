@@ -12,6 +12,7 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
     @FXML static loginFormController loginFormController;
+    static Stage logInStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -19,9 +20,12 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("loginForm.fxml"));
         Parent root = loader.load();
 
+        //Set loginStage for easier access later
+        logInStage = primaryStage;
+
         //get login FOrm controller and set login pane sa anchor pane on the right
         loginFormController = loader.getController();
-        loginFormController.mainPane.getChildren().set(1, FXMLLoader.load(getClass().getResource("loginPanel.fxml")));
+        loginFormController.initElements();
 
         //Name stage
         primaryStage.setTitle("Log In");

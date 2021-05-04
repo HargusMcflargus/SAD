@@ -1,5 +1,6 @@
 package sample;
 
+import com.healthmarketscience.jackcess.expr.ParseException;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,16 +8,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class loginPanelController {
     @FXML TextField user;
     @FXML TextField password;
     @FXML Text signInText;
+    Boolean admin = false;
+
 
     public void logIn(String tempUsername) throws IOException {
         user.getScene().getWindow().hide();
@@ -28,19 +33,25 @@ public class loginPanelController {
         Scene newScene = new Scene(root);
         actualStage.setScene(newScene);
         actualStage.setOnShowing(windowEvent -> {
-            controller.dashboardButton.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
-            controller.dashboardButton.setButtonType(JFXButton.ButtonType.RAISED);
+            try {
+                controller.switchToDashBoard();
+                if (admin){
+                    controller.userImage.setImage(new Image("img/key.png"));
+                }
+                else{
+                    controller.userImage.setImage(new Image("img/user.png"));
+                    controller.dataEntry.setDisable(true);
+                }
+            } catch (IOException | SQLException | ParseException | java.text.ParseException e) {
+                e.printStackTrace();
+            }
+            user.clear();
+            password.clear();
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Welcome " + tempUsername + "!");
             alert.showAndWait();
         });
         actualStage.setTitle("Caloocan City North Budget Tracker");
-
         actualStage.show();
-    }
-
-    public void clearThings() {
-        user.setText("");
-        password.setText("");
     }
 
     public void verify() throws Exception {
@@ -51,6 +62,11 @@ public class loginPanelController {
         }
         Alert alert = new Alert(Alert.AlertType.ERROR, "User and password not found");
         alert.showAndWait();
+    }
+
+    public void setAdmin() throws Exception {
+        admin = true;
+        verify();
     }
 
     public void registration() throws IOException {

@@ -16,12 +16,9 @@ public class RegisterUserController {
     @FXML TextField passwordField;
     @FXML TextField passWordField2;
 
-
-    //TODO Add error handling for matching last names
-
     public void register() throws Exception {
         DatabaseManager databaseManager = new DatabaseManager();
-        if (firstName.getText().equals("")){
+        if (firstName.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR, "First Name Field Empty");
             alert.showAndWait();
             return;
@@ -51,7 +48,18 @@ public class RegisterUserController {
             alert.showAndWait();
             return;
         }
-        if (databaseManager.executeStatement("INSERT INTO Users ([username], [password]) VALUES (?, ?) ", new String[]{userField.getText(), passwordField.getText()})){
+        else if(databaseManager.verifyName(firstName.getText(), lastName.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "User Already Exists");
+            alert.showAndWait();
+            return;
+        }
+        String[] values = new String[]{
+          userField.getText(),
+          passwordField.getText(),
+          firstName.getText(),
+          lastName.getText()
+        };
+        if (databaseManager.executeStatement("INSERT INTO Users ([username], [password], [firstname], [lastname]) VALUES (?, ?, ?, ?) ", values)){
             Alert alert = new Alert(Alert.AlertType.WARNING, "User Added");
             alert.showAndWait().ifPresent(response ->{
                 if (response == ButtonType.OK){
@@ -63,5 +71,10 @@ public class RegisterUserController {
                 }
             });
         }
+        userField.clear();
+        passwordField.clear();
+        passWordField2.clear();
+        firstName.clear();
+        lastName.clear();
     }
 }
