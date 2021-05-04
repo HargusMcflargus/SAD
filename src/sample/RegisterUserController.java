@@ -1,9 +1,12 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 
 public class RegisterUserController {
@@ -12,6 +15,9 @@ public class RegisterUserController {
     @FXML TextField userField;
     @FXML TextField passwordField;
     @FXML TextField passWordField2;
+
+
+    //TODO Add error handling for matching last names
 
     public void register() throws Exception {
         DatabaseManager databaseManager = new DatabaseManager();
@@ -46,10 +52,14 @@ public class RegisterUserController {
             return;
         }
         if (databaseManager.executeStatement("INSERT INTO Users ([username], [password]) VALUES (?, ?) ", new String[]{userField.getText(), passwordField.getText()})){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "User Added");
+            Alert alert = new Alert(Alert.AlertType.WARNING, "User Added");
             alert.showAndWait().ifPresent(response ->{
                 if (response == ButtonType.OK){
-                    userField.getScene().getWindow().hide();
+                    try {
+                        Main.loginFormController.mainPane.getChildren().set(1, FXMLLoader.load(getClass().getResource("loginPanel.fxml")));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }

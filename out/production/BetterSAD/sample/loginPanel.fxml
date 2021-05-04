@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.loginPanelController">
+   <children>
+      <AnchorPane prefHeight="379.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="user" layoutX="85.0" layoutY="140.0" prefHeight="25.0" prefWidth="167.0" promptText="Username" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="140.0">
+               <font>
+                  <Font name="FontAwesome" size="12.0" />
+               </font>
+            </TextField>
+            <Text fx:id="signInText" layoutX="174.0" layoutY="368.0" onMouseClicked="#registration" onMouseEntered="#signInHover" onMouseExited="#signInHoverOut" strokeType="OUTSIDE" strokeWidth="0.0" text="No Account? Sign Up" textAlignment="RIGHT" underline="true" AnchorPane.bottomAnchor="28.98828125" AnchorPane.rightAnchor="20.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <JFXButton buttonType="RAISED" layoutX="40.0" layoutY="254.0" onAction="#verify" style="-fx-background-color: #4d93ff;" text="Log In as User" AnchorPane.bottomAnchor="121.0" AnchorPane.rightAnchor="169.0">
+               <ripplerFill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                           <color>
+                              <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.4524627720504008">
+                           <color>
+                              <Color red="0.0974658876657486" green="0.32163742184638977" blue="0.6578947305679321" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.7419915471817353">
+                           <color>
+                              <Color red="0.1246345043182373" green="0.4345455765724182" blue="0.8684210777282715" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+            <ImageView fx:id="loginLogo" fitHeight="53.0" fitWidth="71.0" layoutX="115.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="usernameLogo" fitHeight="30.0" fitWidth="30.0" layoutX="33.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="136.0">
+               <image>
+                  <Image url="@../img/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="passwordLogo" fitHeight="30.0" fitWidth="30.0" layoutX="31.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/key.png" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="password" layoutX="85.0" layoutY="181.0" prefHeight="25.0" prefWidth="167.0" promptText="Password" AnchorPane.rightAnchor="48.0" />
+            <JFXButton buttonType="RAISED" layoutX="150.0" layoutY="254.0" onAction="#verify" style="-fx-background-color: #4d93ff;" text="Log In as Admin">
+               <ripplerFill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                           <color>
+                              <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.4524627720504008">
+                           <color>
+                              <Color red="0.0974658876657486" green="0.32163742184638977" blue="0.6578947305679321" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.7419915471817353">
+                           <color>
+                              <Color red="0.1246345043182373" green="0.4345455765724182" blue="0.8684210777282715" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

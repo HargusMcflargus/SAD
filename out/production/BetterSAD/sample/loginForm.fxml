@@ -1,68 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.loginFormController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.loginFormController">
    <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #0F356F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
       <children>
-         <ImageView fx:id="logo" fitHeight="127.0" fitWidth="95.0" layoutX="103.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="137.0" />
+         <ImageView fx:id="logo" fitHeight="127.0" fitWidth="95.0" layoutX="103.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="137.0">
+            <image>
+               <Image url="@../img/loonalogo.png" />
+            </image></ImageView>
       </children></AnchorPane>
-   <AnchorPane layoutX="300.0" prefHeight="379.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <children>
-         <TextField fx:id="user" layoutX="83.0" layoutY="170.0" prefHeight="25.0" prefWidth="167.0" promptText="Username" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="170.0">
-            <font>
-               <Font name="FontAwesome" size="12.0" />
-            </font>
-         </TextField>
-         <Text fx:id="signInText" layoutX="174.0" layoutY="368.0" onMouseClicked="#registration" onMouseEntered="#signInHover" onMouseExited="#signInHoverOut" strokeType="OUTSIDE" strokeWidth="0.0" text="No Account? Sign Up" textAlignment="RIGHT" underline="true" AnchorPane.bottomAnchor="28.98828125" AnchorPane.rightAnchor="20.0">
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor>
-         </Text>
-         <JFXButton buttonType="RAISED" layoutX="124.0" layoutY="283.0" onAction="#verify" style="-fx-background-color: #4d93ff;" text="Log In" AnchorPane.bottomAnchor="92.0" AnchorPane.rightAnchor="126.0">
-            <ripplerFill>
-               <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
-                  <stops>
-                     <Stop>
-                        <color>
-                           <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
-                        </color>
-                     </Stop>
-                     <Stop offset="0.007662835249042145">
-                        <color>
-                           <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
-                        </color>
-                     </Stop>
-                     <Stop offset="0.4524627720504008">
-                        <color>
-                           <Color red="0.0974658876657486" green="0.32163742184638977" blue="0.6578947305679321" />
-                        </color>
-                     </Stop>
-                     <Stop offset="0.7419915471817353">
-                        <color>
-                           <Color red="0.1246345043182373" green="0.4345455765724182" blue="0.8684210777282715" />
-                        </color>
-                     </Stop>
-                     <Stop offset="1.0">
-                        <color>
-                           <Color red="1.0" green="1.0" blue="1.0" />
-                        </color>
-                     </Stop>
-                  </stops>
-               </LinearGradient>
-            </ripplerFill>
-         </JFXButton>
-         <ImageView fx:id="loginLogo" fitHeight="53.0" fitWidth="71.0" layoutX="115.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" />
-         <ImageView fx:id="usernameLogo" fitHeight="30.0" fitWidth="30.0" layoutX="31.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true" smooth="false" />
-         <ImageView fx:id="passwordLogo" fitHeight="30.0" fitWidth="30.0" layoutX="29.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-         <PasswordField fx:id="password" layoutX="82.0" layoutY="211.0" prefHeight="25.0" prefWidth="167.0" promptText="Password" AnchorPane.rightAnchor="50.0" />
-
-      </children>
-   </AnchorPane>
+   <AnchorPane layoutX="300.0" prefHeight="379.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
 </AnchorPane>

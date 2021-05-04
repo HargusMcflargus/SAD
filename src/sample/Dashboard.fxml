@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="759.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.dashboardController">
    <children>
-      <AnchorPane prefHeight="457.0" prefWidth="180.0" style="-fx-background-color: #183A6D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="457.0" prefWidth="180.0" style="-fx-background-color: #EB8921;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton fx:id="dashboardButton" buttonType="RAISED" layoutX="-7.0" layoutY="108.0" onMouseClicked="#switchToDashBoard" onMouseEntered="#dashBoardHoverIn" onMouseExited="#dashBoardHoverOut" prefHeight="45.0" prefWidth="180.0" style="-fx-label-padding: 5;" text="Dashboard" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="108.0">
                <font>
@@ -20,12 +20,12 @@
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.12024854123592377" green="0.3195175528526306" blue="0.6184210777282715" />
+                              <Color red="0.12156862765550613" green="0.3176470696926117" blue="0.6196078658103943" />
                            </color>
                         </Stop>
                         <Stop offset="0.2577319587628866">
                            <color>
-                              <Color red="0.1040448322892189" green="0.3834795355796814" blue="0.8026315569877625" />
+                              <Color red="0.10588235408067703" green="0.3843137323856354" blue="0.8039215803146362" />
                            </color>
                         </Stop>
                         <Stop offset="0.6786744085002172">
@@ -40,7 +40,8 @@
                         </Stop>
                      </stops>
                   </LinearGradient>
-               </ripplerFill></JFXButton>
+               </ripplerFill>
+           </JFXButton>
             <JFXButton fx:id="historyButton" layoutX="-3.0" layoutY="146.0" onMouseEntered="#historyHoverIn" onMouseExited="#historyHoverOut" prefHeight="45.0" prefWidth="180.0" text="History" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="153.0">
                <font>
                   <Font name="Century Gothic" size="12.0" />
@@ -105,7 +106,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="181.0" prefHeight="45.0" prefWidth="578.0" style="-fx-background-color: #0D3569;" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="181.0" prefHeight="45.0" prefWidth="578.0" style="-fx-background-color: #EB8921;" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text fill="WHITE" layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-family: &quot;Helvetica&quot;;" text="Dashboard" />
          </children>

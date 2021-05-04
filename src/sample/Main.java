@@ -7,34 +7,39 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-import java.sql.*;
 
 public class Main extends Application {
-    public static Stage MainStage;
-    static loginFormController mainController;
-
-    protected Connection connection;
+    @FXML static loginFormController loginFormController;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-        MainStage = primaryStage;
+        //Initiate loginform
         FXMLLoader loader = new FXMLLoader(getClass().getResource("loginForm.fxml"));
         Parent root = loader.load();
 
-        mainController = loader.getController();
-        mainController.logo.setImage(new Image("img/loonalogo.png"));
-        mainController.usernameLogo.setImage(new Image("img/user.png"));
-        mainController.passwordLogo.setImage(new Image("img/key.png"));
+        //get login FOrm controller and set login pane sa anchor pane on the right
+        loginFormController = loader.getController();
+        loginFormController.mainPane.getChildren().set(1, FXMLLoader.load(getClass().getResource("loginPanel.fxml")));
 
+        //Name stage
         primaryStage.setTitle("Log In");
+
+        //Set Stage scene (Login Form)
         Scene thing = new Scene(root);
         primaryStage.setScene(thing);
+
+        //Set Icon Image
         primaryStage.getIcons().add(new Image("img/ot12.png"));
 
+        //Set to not sizable
         primaryStage.setResizable(false);
 
+        //set Control buttons
+        primaryStage.initStyle(StageStyle.UTILITY);
+
+        //Show actual stage
         primaryStage.show();
     }
 

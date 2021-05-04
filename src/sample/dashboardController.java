@@ -1,18 +1,11 @@
 package sample;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXRippler;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class dashboardController {
 
@@ -28,32 +21,68 @@ public class dashboardController {
     @FXML
     JFXButton dataEntry;
 
+    public int selection = 1;
+
+    //TODO Balance,
+    //TODO Expenses,
+    //TODO Image ng contractor,
+    //TODO Image sa ilalim ng menu bar (parang profile),
+    //TODO Menu bar
+    //TODO Disable admin controls
+    //TODO Pagination (COlor ng pornhub)
+    //TODO logo ng city hall (for change pa to kasi papaalam pa
+    //TODO Laman ng per project Additonal data such as Project manager, Date started, Actual end, Estimated date and cost, actual cost, status
+
+    //Change right panel to dashboard class (FORM)
     public void switchToDashBoard() throws IOException {
         mainPane.getChildren().set(2, FXMLLoader.load(getClass().getResource("dashBoardPane.fxml")));
+        selection = 1;
     }
 
+    //Nav Button Hover in and out
     public void dashBoardHoverIn(){
-        dashboardButton.setButtonType(JFXButton.ButtonType.RAISED);
-        dashboardButton.setRipplerFill(Paint.valueOf("#1b62cd"));
+        if (!(selection == 1)){
+            dashboardButton.setButtonType(JFXButton.ButtonType.RAISED);
+            dashboardButton.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
+        }
     }
     public void dashBoardHoverOut(){
         dashboardButton.setButtonType(JFXButton.ButtonType.FLAT);
-        dashboardButton.setRipplerFill(Paint.valueOf("#183A6D"));
+        if (selection == 1){
+            dashboardButton.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
+        }
+        else{
+            dashboardButton.setStyle("-fx-background-color: #EB8921;");
+        }
     }
     public void historyHoverIn(){
-        historyButton.setButtonType(JFXButton.ButtonType.RAISED);
-        historyButton.setRipplerFill(Paint.valueOf("#1b62cd"));
+        if (!(selection == 2)){
+            historyButton.setButtonType(JFXButton.ButtonType.RAISED);
+            historyButton.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
+        }
     }
     public void historyHoverOut(){
         historyButton.setButtonType(JFXButton.ButtonType.FLAT);
-        historyButton.setRipplerFill(Paint.valueOf("#183A6D"));
+        if (selection == 2){
+            historyButton.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
+        }
+        else{
+            historyButton.setStyle("-fx-background-color: #EB8921;");
+        }
     }
     public  void dataEntryHoverIn(){
-        dataEntry.setButtonType(JFXButton.ButtonType.RAISED);
-        dataEntry.setRipplerFill(Paint.valueOf("#1b62cd"));
+        if (!(selection == 3)){
+            dataEntry.setButtonType(JFXButton.ButtonType.RAISED);
+            dataEntry.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
+        }
     }
     public void dataEntryHoverOut(){
         dataEntry.setButtonType(JFXButton.ButtonType.FLAT);
-        dataEntry.setRipplerFill(Paint.valueOf("#183A6D"));
+        if (selection == 3){
+            dataEntry.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
+        }
+        else{
+            dataEntry.setStyle("-fx-background-color: #EB8921;");
+        }
     }
 }
