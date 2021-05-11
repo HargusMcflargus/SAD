@@ -1,6 +1,10 @@
 package sample;
 
+import com.healthmarketscience.jackcess.expr.ParseException;
+
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DatabaseManager {
 
@@ -68,5 +72,57 @@ public class DatabaseManager {
             return true;
         }
         return false;
+    }
+
+    //Verifies for admin
+    public boolean isAdmin(String usename, String password){
+        try{
+            PreparedStatement preparedStatement = this.connection.prepareStatement("SELECT * FROM Users;");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                if (resultSet.getString("firstname") == null){
+                    return true;
+                }
+            }
+        }catch (SQLException e){
+        }
+        return  false;
+    }
+
+    //get current yearly expenses
+    public double getYearlyExpense(){
+        double answer = 0.0;
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement("SELECT * FROM Projects");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            Date now = new Date();
+            while (resultSet.next()){
+                Date otherDate = new SimpleDateFormat("dd/mm/yyyy").parse(resultSet.getString("DateStarted"));
+                if (now.after(otherDate)){
+                    answer += Double.parseDouble(resultSet.getString("ActualCost"));
+                }
+            }
+        } catch (SQLException | java.text.ParseException throwables) {
+            throwables.printStackTrace();
+        }
+        return answer;
+    }
+
+    //get expenses per month
+    public double getMonthlyExpense(String month){
+        double a = 0;
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement("SELECT * FROM Projects");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                String date = resultSet.getString("DateStarted").split("/", 3)[1];
+                if (date.equals(month)){
+                    a += Double.parseDouble(resultSet.getString("ActualCost"));
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return a;
     }
 }

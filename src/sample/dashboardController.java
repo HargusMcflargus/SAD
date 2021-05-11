@@ -25,6 +25,8 @@ public class dashboardController {
 
     @FXML ImageView userImage;
 
+    @FXML AnchorPane adminControls;
+
     public int selection = 1;
 
     //TODO Image ng contractor,
@@ -33,24 +35,30 @@ public class dashboardController {
 
     //Change right panel to dashboard class (FORM)
     public void switchToDashBoard() throws IOException, SQLException, ParseException {
-        dashboardButton.setStyle("-fx-background-color: linear-gradient(to right, #1b62cd 30%, transparent); ");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dashBoardPane.fxml"));
         Parent root = loader.load();
         mainPane.getChildren().set(2, root);
         selection = 1;
         dashBoardPaneContoller dashBoardPaneContoller = loader.getController();
         dashBoardPaneContoller.initializeEverything();
+        dashBoardHoverIn();
         historyHoverOut();
         dataEntryHoverOut();
     }
     public void switchToHistory() throws IOException{
-        mainPane.getChildren().set(2, FXMLLoader.load(getClass().getResource("historyPane.fxml")));
+        FXMLLoader loader  = new FXMLLoader(getClass().getResource("historyPane.fxml"));
+        mainPane.getChildren().set(2, loader.load());
+        historyPaneController controller = loader.getController();
+        controller.init();
         selection = 2;
         dashBoardHoverOut();
         dataEntryHoverOut();
     }
     public void switchToSetting() throws IOException{
-        mainPane.getChildren().set(2, FXMLLoader.load(getClass().getResource("settingPane.fxml")));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("settingPane.fxml"));
+        mainPane.getChildren().set(2, loader.load());
+        settingPaneController controller = loader.getController();
+        controller.init();
         selection = 3;
         historyHoverOut();
         dashBoardHoverOut();

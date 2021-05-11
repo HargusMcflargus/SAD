@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="457.0" prefWidth="759.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.dashBoardPaneContoller">
+<AnchorPane prefHeight="312.0" prefWidth="578.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.historyPaneController">
    <children>
-      <AnchorPane layoutX="180.0" layoutY="47.0" prefHeight="312.0" prefWidth="578.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
-          <children>
-          </children>
-      </AnchorPane>
+      <TextField fx:id="searchField" layoutX="36.0" layoutY="20.0" promptText="Keywords, dates, etc." />
+      <HBox layoutX="14.0" layoutY="73.0" prefHeight="307.0" prefWidth="525.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="73.0">
+         <children>
+            <ScrollPane fx:id="scrollPane" prefHeight="307.0" prefWidth="298.0" HBox.hgrow="SOMETIMES">
+               <content>
+                  <VBox fx:id="container" />
+               </content>
+            </ScrollPane>
+            <Pagination maxPageIndicatorCount="5" pageCount="5" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="SOMETIMES" />
+         </children>
+      </HBox>
+      <Button layoutX="199.0" layoutY="20.0" mnemonicParsing="false" onAction="#changeList" text="Search" />
+      <ChoiceBox fx:id="choices" layoutX="402.0" layoutY="20.0" prefWidth="150.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="20.0" />
    </children>
 </AnchorPane>

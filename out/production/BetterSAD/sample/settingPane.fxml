@@ -1,17 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="457.0" prefWidth="759.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.dashBoardPaneContoller">
+<AnchorPane prefHeight="500.0" prefWidth="646.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.settingPaneController">
    <children>
-      <AnchorPane layoutX="180.0" layoutY="47.0" prefHeight="312.0" prefWidth="578.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
-          <children>
-          </children>
-      </AnchorPane>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="General">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane collapsible="false" layoutX="35.0" layoutY="14.0" prefHeight="157.0" prefWidth="377.0" text="Admin User Control" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="14.0">
+                           <content>
+                              <HBox prefWidth="398.0">
+                                 <children>
+                                    <GridPane prefHeight="129.0" prefWidth="327.0" HBox.hgrow="SOMETIMES">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.0" minWidth="10.0" prefWidth="119.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="188.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Retype" GridPane.rowIndex="2" />
+                                          <TextField fx:id="usernameField" GridPane.columnIndex="1" />
+                                          <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="passwordField2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane prefHeight="111.0" prefWidth="105.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <Button fx:id="regButton" layoutX="15.0" layoutY="6.0" mnemonicParsing="false" text="Register" />
+                                          <Button fx:id="delButton" disable="true" layoutX="16.0" layoutY="44.0" mnemonicParsing="false" text="Remove" />
+                                          <Button fx:id="edtButton" disable="true" layoutX="25.0" layoutY="80.0" mnemonicParsing="false" text="Save" />
+                                       </children>
+                                    </AnchorPane>
+                                    <VBox HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <TitledPane collapsible="false" text="Admin List" VBox.vgrow="ALWAYS">
+                                             <content>
+                                                <ScrollPane fx:id="scrollPaneUser" prefHeight="85.0" prefWidth="207.0">
+                                                   <content>
+                                                      <VBox fx:id="vBoxUser" />
+                                                   </content>
+                                                </ScrollPane>
+                                             </content>
+                                          </TitledPane>
+                                          <Button mnemonicParsing="false" onAction="#clearSelection" text="Clear" VBox.vgrow="NEVER">
+                                             <VBox.margin>
+                                                <Insets left="15.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </TitledPane>
+                        <TextField fx:id="textFieldGeneral" layoutX="51.0" layoutY="378.0" onAction="#searchGeneral" onKeyTyped="#searchGeneral" promptText="Filter" AnchorPane.bottomAnchor="25.0" />
+                        <ScrollPane fx:id="scrollPaneGeneral" layoutX="26.0" layoutY="236.0" prefHeight="177.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="236.0">
+                           <content>
+                              <HBox fx:id="hBoxGeneral" alignment="TOP_CENTER">
+                                 <children>
+                                    <TitledPane collapsible="false" text="Date" textAlignment="CENTER" HBox.hgrow="NEVER">
+                                       <content>
+                                          <VBox fx:id="dateColumn" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane collapsible="false" layoutX="10.0" layoutY="10.0" text="User" textAlignment="CENTER" HBox.hgrow="NEVER">
+                                       <content>
+                                          <VBox fx:id="userColumn" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane collapsible="false" text="Text" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                       <content>
+                                          <VBox fx:id="textColumn" />
+                                       </content>
+                                    </TitledPane>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <Text layoutX="51.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback" AnchorPane.leftAnchor="51.0">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Project">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane collapsible="false" layoutX="394.0" layoutY="71.0" prefHeight="327.0" prefWidth="332.0" text="Project List" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="397.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="71.0">
+                           <content>
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox />
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                        <AnchorPane layoutX="14.0" layoutY="30.0" prefWidth="362.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0">
+                           <children>
+                              <TitledPane animated="false" collapsible="false" text="Project Title" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <TextField />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutY="70.0" text="Project Overseer" textAlignment="CENTER" AnchorPane.topAnchor="70.0">
+                                 <content>
+                                    <TextField />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutX="186.0" prefHeight="51.0" prefWidth="176.0" text="Project Type" textAlignment="CENTER" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <ChoiceBox prefHeight="25.0" prefWidth="332.0" />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutY="127.0" prefHeight="51.0" prefWidth="151.0" text="Date Started" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="130.0">
+                                 <content>
+                                    <DatePicker />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutX="187.0" layoutY="130.0" text="Date Ended" textAlignment="CENTER" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="130.0">
+                                 <content>
+                                    <DatePicker />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutY="184.0" prefHeight="51.0" prefWidth="151.0" text="Estimated Date End " textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="190.0">
+                                 <content>
+                                    <DatePicker />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutY="244.0" text="Budget Cost" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="250.0">
+                                 <content>
+                                    <TextField />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutX="186.0" layoutY="192.0" prefHeight="51.0" prefWidth="177.0" text="Status" textAlignment="CENTER" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="192.0">
+                                 <content>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="CheckBox">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </CheckBox>
+                                          <CheckBox mnemonicParsing="false" text="CheckBox">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </CheckBox>
+                                          <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </TitledPane>
+                              <ButtonBar layoutX="38.0" layoutY="314.0" prefHeight="40.0" prefWidth="223.0">
+                                <buttons>
+                                  <Button mnemonicParsing="false" text="Add" />
+                                    <Button disable="true" mnemonicParsing="false" text="Edit" />
+                                    <Button disable="true" mnemonicParsing="false" text="Remove" />
+                                </buttons>
+                              </ButtonBar>
+                           </children>
+                        </AnchorPane>
+                        <TextField layoutX="408.0" layoutY="30.0" promptText="Filter" AnchorPane.topAnchor="30.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Budget">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane collapsible="false" layoutX="320.0" layoutY="93.0" prefHeight="368.0" prefWidth="409.0" text="Monthy Budget" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
+                        <AnchorPane layoutX="31.0" layoutY="114.0" prefHeight="368.0" prefWidth="218.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <children>
+                              <ButtonBar layoutX="-21.0" layoutY="200.0" prefHeight="40.0" prefWidth="223.0">
+                                 <buttons>
+                                    <Button mnemonicParsing="false" text="Add" />
+                                    <Button disable="true" mnemonicParsing="false" text="Edit" />
+                                    <Button disable="true" mnemonicParsing="false" text="Remove" />
+                                 </buttons>
+                              </ButtonBar>
+                              <TitledPane animated="false" collapsible="false" layoutX="38.0" layoutY="25.0" text="Date">
+                                 <content>
+                                    <DatePicker />
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" layoutX="50.0" layoutY="111.0" text="MONEEEEEEEEYYYY">
+                                 <content>
+                                    <TextField />
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

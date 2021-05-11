@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" text="untitled" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.titledPaneFormatController">
+<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" text="untitled" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.titledPaneFormatController">
   <content>
     <AnchorPane maxHeight="200.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
@@ -23,14 +23,14 @@
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contractor:" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Started:" GridPane.rowIndex="1" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cost (Estimated)" GridPane.rowIndex="2" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date End:" GridPane.rowIndex="3" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" GridPane.rowIndex="4" />
-                  <TextField fx:id="contractor" GridPane.columnIndex="1" />
-                  <TextField fx:id="dateStart" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="cost" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="end" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField fx:id="status" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type:" GridPane.rowIndex="4" />
+                  <TextField fx:id="contractor" editable="false" GridPane.columnIndex="1" />
+                  <TextField fx:id="dateStart" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="cost" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="duration" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="type" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
             </GridPane>
          </children></AnchorPane>

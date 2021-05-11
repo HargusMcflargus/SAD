@@ -23,40 +23,7 @@
                </cursor>
             </Text>
             <PasswordField fx:id="password" layoutX="85.0" layoutY="181.0" prefHeight="25.0" prefWidth="167.0" promptText="Password" AnchorPane.rightAnchor="48.0" />
-            <JFXButton buttonType="RAISED" layoutX="40.0" layoutY="254.0" onAction="#verify" style="-fx-background-color: #4d93ff;" text="Log In as User" AnchorPane.bottomAnchor="121.0" AnchorPane.rightAnchor="169.0">
-               <ripplerFill>
-                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.007662835249042145">
-                           <color>
-                              <Color red="0.05882352963089943" green="0.2078431397676468" blue="0.43529412150382996" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.4524627720504008">
-                           <color>
-                              <Color red="0.0974658876657486" green="0.32163742184638977" blue="0.6578947305679321" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.7419915471817353">
-                           <color>
-                              <Color red="0.1246345043182373" green="0.4345455765724182" blue="0.8684210777282715" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-            </JFXButton>
-            <JFXButton fx:id="adminLog" buttonType="RAISED" layoutX="150.0" layoutY="254.0" onAction="#setAdmin" style="-fx-background-color: #4d93ff;" text="Log In as Admin">
+            <JFXButton buttonType="RAISED" layoutX="136.0" layoutY="255.0" onAction="#verify" style="-fx-background-color: #4d93ff;" text="Log In" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="114.0">
                <ripplerFill>
                   <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
                      <stops>

@@ -6,8 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
+
+import java.io.File;
 
 
 public class Main extends Application {
@@ -46,7 +50,6 @@ public class Main extends Application {
         //Show actual stage
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

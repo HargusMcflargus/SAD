@@ -28,6 +28,8 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/src/lib/fontawesomefx-8.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/commons-collections4-4.4-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/xmlbeans-5.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
