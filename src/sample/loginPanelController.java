@@ -1,6 +1,8 @@
 package sample;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,7 +24,7 @@ public class loginPanelController {
     @FXML Text signInText;
     public boolean admin = false;
 
-    public void logIn(String tempUsername) throws IOException {
+    public void logIn() throws IOException {
         user.getScene().getWindow().hide();
 
         Stage actualStage = new Stage();
@@ -42,7 +44,7 @@ public class loginPanelController {
             };
             user.clear();
             password.clear();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Welcome " + tempUsername + "!");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Welcome " + Main.user + "!");
             alert.showAndWait();
         });
         actualStage.setTitle("Caloocan City North Budget Tracker");
@@ -53,7 +55,8 @@ public class loginPanelController {
         DatabaseManager databaseManager = new DatabaseManager();
         if (databaseManager.verifyUser(user.getText(), password.getText())){
             admin = new DatabaseManager().isAdmin(user.getText(), password.getText());
-            logIn(user.getText());
+            logIn();
+            Main.user = user.getText();
             return;
         }
         Alert alert = new Alert(Alert.AlertType.ERROR, "User and password not found");

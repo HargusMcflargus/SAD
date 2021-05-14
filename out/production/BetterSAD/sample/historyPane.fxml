@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="312.0" prefWidth="578.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.historyPaneController">
@@ -13,7 +14,7 @@
                   <VBox fx:id="container" />
                </content>
             </ScrollPane>
-            <Pagination maxPageIndicatorCount="5" pageCount="5" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="SOMETIMES" />
+            <ImageView fitHeight="208.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <Button layoutX="199.0" layoutY="20.0" mnemonicParsing="false" onAction="#changeList" text="Search" />

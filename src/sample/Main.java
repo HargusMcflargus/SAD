@@ -17,7 +17,7 @@ import java.io.File;
 public class Main extends Application {
     @FXML static loginFormController loginFormController;
     static Stage logInStage;
-
+    static String user;
     @Override
     public void start(Stage primaryStage) throws Exception {
         //Initiate loginform

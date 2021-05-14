@@ -4,8 +4,12 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -27,8 +31,9 @@ public class dashboardController {
 
     @FXML AnchorPane adminControls;
 
-    public int selection = 1;
+    @FXML Text title;
 
+    public int selection = 1;
     //TODO Image ng contractor,
     //TODO Pagination (COlor ng pornhub)
     //TODO logo ng city hall (for change pa to kasi papaalam pa)
@@ -44,6 +49,7 @@ public class dashboardController {
         dashBoardHoverIn();
         historyHoverOut();
         dataEntryHoverOut();
+        title.setText("DASHBOARD");
     }
     public void switchToHistory() throws IOException{
         FXMLLoader loader  = new FXMLLoader(getClass().getResource("historyPane.fxml"));
@@ -53,6 +59,7 @@ public class dashboardController {
         selection = 2;
         dashBoardHoverOut();
         dataEntryHoverOut();
+        title.setText("History");
     }
     public void switchToSetting() throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("settingPane.fxml"));
@@ -62,12 +69,18 @@ public class dashboardController {
         selection = 3;
         historyHoverOut();
         dashBoardHoverOut();
+        title.setText("Admin Controls");
     }
 
     public void logOUt(){
-       logOUt.getScene().getWindow().hide();
-       dataEntry.setDisable(false);
-       Main.logInStage.show();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?");
+        alert.showAndWait().ifPresent(buttonType -> {
+            if (buttonType == ButtonType.OK){
+                logOUt.getScene().getWindow().hide();
+                dataEntry.setDisable(false);
+                Main.logInStage.show();
+            }
+        });
     }
 
     //Nav Button Hover in and out

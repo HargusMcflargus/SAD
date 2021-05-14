@@ -9,6 +9,8 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -23,15 +25,15 @@ public class dashBoardPaneContoller {
     @FXML ChoiceBox yearList;
     @FXML TextField budgetField;
     @FXML TextField expensesFIeld;
-    @FXML VBox currentProjectList;
+    @FXML Accordion currentProjectList;
     @FXML ScrollPane scrollPane;
     @FXML CategoryAxis categoryAxis;
     @FXML NumberAxis numberAxis;
     @FXML LineChart<String, Number> chart;
+    @FXML ImageView currentImage;
+    @FXML TextField comment;
 
     public ResultSet wholeResultSet;
-
-    //TODO add comments
 
 
     public void initializeEverything() throws SQLException, ParseException, IOException {
@@ -106,7 +108,7 @@ public class dashBoardPaneContoller {
             if (resultSet.getString("Status").equals("Ongoing")){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("titledPaneFormat.fxml"));
 
-                currentProjectList.getChildren().add(loader.load());
+                currentProjectList.getPanes().add(loader.load());
                 titledPaneFormatController controller = loader.getController();
                 controller.setValues(
                         resultSet.getString("ProjectName"),
@@ -115,12 +117,27 @@ public class dashBoardPaneContoller {
                         resultSet.getString("DateStarted"),
                         resultSet.getString("ActualCost")
                 );
+                controller.titledPane.expandedProperty().addListener((observable, oldValue, newValue) -> {
+                    for (TitledPane thing: currentProjectList.getPanes()){
+                        if (thing.getText().equals(controller.titledPane.getText()))
+                            continue;
+                        thing.expandedProperty().set(false);
+                    }
+                    if (newValue){
+                        try {
+                            ResultSet resultSett = new DatabaseManager().executeQuery("SELECT * FROM Projects WHERE ProjectName='" + controller.titledPane.getText() + "'");
+                            if (resultSett.next())
+                                currentImage.setImage(new Image(resultSett.getString("ImagePath")));
+                        } catch (SQLException throwables) {
+                            throwables.printStackTrace();
+                        }
+                    }
+                });
+
                 controller.titledPane.prefWidthProperty().bind(currentProjectList.prefWidthProperty());
             }
         }
     }
-
-
     public String getMonth(String thing){
         switch (Integer.parseInt(thing)){
             case 1:
@@ -149,5 +166,29 @@ public class dashBoardPaneContoller {
                 return "December";
         }
         return "A";
+    }
+
+    public void leaveComment(){
+        if (!comment.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?");
+            alert.showAndWait().ifPresent(buttonType -> {
+                if (buttonType == ButtonType.OK){
+                    String now = new SimpleDateFormat("dd/mm/yyyy").format(new Date());
+                    String[] values = new String[]{
+                            now,
+                            Main.user,
+                            comment.getText()
+                    };
+                    try{
+                        if (new DatabaseManager().executeStatement("INSERT INTO Feedback ([TimeStamp], [Username], [Comment]) VALUES (?, ?, ?)", values)){
+                            Alert alert1 = new Alert(Alert.AlertType.INFORMATION, "Comment Posted");
+                            alert1.showAndWait();
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
     }
 }

@@ -11,7 +11,7 @@
    <children>
       <AnchorPane prefHeight="457.0" prefWidth="180.0" style="-fx-background-color: #EB8921;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton fx:id="dashboardButton" buttonType="RAISED" layoutX="-7.0" layoutY="108.0" onAction="#switchToDashBoard" onMouseClicked="#switchToDashBoard" onMouseEntered="#dashBoardHoverIn" onMouseExited="#dashBoardHoverOut" prefHeight="45.0" prefWidth="180.0" style="-fx-label-padding: 5;" text="Dashboard" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="128.0">
+            <JFXButton fx:id="dashboardButton" buttonType="RAISED" layoutY="182.0" onAction="#switchToDashBoard" onMouseClicked="#switchToDashBoard" onMouseEntered="#dashBoardHoverIn" onMouseExited="#dashBoardHoverOut" prefHeight="45.0" prefWidth="180.0" style="-fx-label-padding: 5;" text="Dashboard" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="182.0">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
@@ -42,7 +42,7 @@
                   </LinearGradient>
                </ripplerFill>
            </JFXButton>
-            <JFXButton fx:id="historyButton" layoutX="-3.0" layoutY="146.0" onAction="#switchToHistory" onMouseEntered="#historyHoverIn" onMouseExited="#historyHoverOut" prefHeight="45.0" prefWidth="180.0" text="History" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="178.0">
+            <JFXButton fx:id="historyButton" layoutY="232.0" onAction="#switchToHistory" onMouseEntered="#historyHoverIn" onMouseExited="#historyHoverOut" prefHeight="45.0" prefWidth="180.0" text="History" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="232.0">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
@@ -109,7 +109,7 @@
                   </LinearGradient>
                </ripplerFill>
             </JFXButton>
-            <AnchorPane fx:id="adminControls" layoutY="271.0" prefHeight="122.0" prefWidth="180.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="228.0">
+            <AnchorPane fx:id="adminControls" layoutY="282.0" prefHeight="122.0" prefWidth="180.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="282.0">
                <children>
                   <JFXButton fx:id="dataEntry" layoutX="-3.0" layoutY="-4.0" onAction="#switchToSetting" onMouseEntered="#dataEntryHoverIn" onMouseExited="#dataEntryHoverOut" prefHeight="45.0" prefWidth="180.0" text="Admin Controls" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
@@ -146,9 +146,9 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="181.0" prefHeight="45.0" prefWidth="578.0" style="-fx-background-color: #EB8921;" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="181.0" prefHeight="70.0" prefWidth="720.0" style="-fx-background-color: #EB8921;" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fill="WHITE" layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-family: &quot;Helvetica&quot;;" text="Dashboard" />
+            <Text fx:id="title" fill="WHITE" layoutX="300.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-family: &quot;Helvetica&quot;;" text="DASHBOARD" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="180.0" layoutY="46.0" prefHeight="411.0" prefWidth="579.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0" />

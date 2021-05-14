@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="312.0" prefWidth="578.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.dashBoardPaneContoller">
+<AnchorPane prefHeight="449.0" prefWidth="592.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.dashBoardPaneContoller">
     <children>
         <Text layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-weight: bold; font-: &quot;Helvetica&quot;;" text="Current Projects" />
-      <HBox layoutX="20.0" layoutY="229.0" prefHeight="157.0" prefWidth="539.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="232.251953125">
+      <HBox layoutX="20.0" layoutY="232.0" prefHeight="150.0" prefWidth="538.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="232.0">
          <children>
-              <ScrollPane fx:id="scrollPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="337.0" HBox.hgrow="SOMETIMES">
+              <ScrollPane fx:id="scrollPane" minHeight="-Infinity" minWidth="-Infinity" HBox.hgrow="ALWAYS">
                <content>
-                  <VBox fx:id="currentProjectList" prefHeight="200.0" prefWidth="100.0" />
+                  <Accordion fx:id="currentProjectList" />
                </content>
               </ScrollPane>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="currentImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="SOMETIMES" />
          </children>
       </HBox>
         <Text layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-font-weight: bold; font-: &quot;Helvetica&quot;;" text="Overall Expenses" AnchorPane.bottomAnchor="362.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="367.67333984375" AnchorPane.topAnchor="14.0" />
@@ -62,5 +62,7 @@
           <NumberAxis fx:id="numberAxis" side="LEFT" />
         </yAxis>
       </LineChart>
+      <TextField fx:id="comment" layoutX="20.0" layoutY="409.0" prefHeight="25.0" prefWidth="469.0" promptText="Leave Comment Down Here" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="103.0" />
+      <Button layoutX="498.0" layoutY="404.0" mnemonicParsing="false" onAction="#leaveComment" text="Comment" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="25.0" />
     </children>
 </AnchorPane>
